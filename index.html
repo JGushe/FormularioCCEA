@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Formulario de inscripción para nuevos estudiantes del Centro de Estudios de Idioma Alemán (CCEA) en Ecuador.">
+  <title>Inscripción | CCEA - Centro de Estudios de Idioma Alemán</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- German flag top stripe -->
+  <div class="german-stripe"></div>
+
+  <div class="main-container">
+
+    <!-- ── Header ── -->
+    <header class="form-header">
+      <div class="logo-container">
+        <img src="assets/logo.png" alt="CCEA - Centro Cultural Ecuatoriano Alemán" class="logo-img">
+      </div>
+      <h1>Ficha de Inscripción</h1>
+      <p class="subtitle">Centro Cultural Ecuatoriano Alemán — <span>CCEA</span></p>
+    </header>
+
+    <!-- ── Form Card ── -->
+    <div class="form-card">
+      <form id="registrationForm" novalidate>
+
+        <!-- ═══ Section 1: Datos Personales ═══ -->
+        <div class="form-section">
+          <div class="section-header">
+            <div class="section-icon">👤</div>
+            <h2 class="section-title">Datos Personales</h2>
+          </div>
+          <div class="form-grid">
+            <!-- Nombre -->
+            <div class="form-group" id="group-nombre">
+              <label for="nombre">Nombre <span class="required">*</span></label>
+              <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Ej: María"
+                autocomplete="given-name" required>
+              <span class="error-message" id="error-nombre"></span>
+            </div>
+            <!-- Apellido Paterno -->
+            <div class="form-group" id="group-apellidoPaterno">
+              <label for="apellidoPaterno">Apellido Paterno <span class="required">*</span></label>
+              <input type="text" id="apellidoPaterno" name="apellidoPaterno" class="form-input"
+                placeholder="Ej: González" autocomplete="family-name" required>
+              <span class="error-message" id="error-apellidoPaterno"></span>
+            </div>
+            <!-- Apellido Materno -->
+            <div class="form-group" id="group-apellidoMaterno">
+              <label for="apellidoMaterno">Apellido Materno <span class="required">*</span></label>
+              <input type="text" id="apellidoMaterno" name="apellidoMaterno" class="form-input" placeholder="Ej: López"
+                required>
+              <span class="error-message" id="error-apellidoMaterno"></span>
+            </div>
+            <!-- Cédula -->
+            <div class="form-group" id="group-cedula">
+              <label for="cedula">Cédula de Identidad <span class="required">*</span></label>
+              <input type="text" id="cedula" name="cedula" class="form-input" placeholder="Ej: 0102030405"
+                maxlength="10" inputmode="numeric" required>
+              <span class="error-message" id="error-cedula"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ Section 2: Contacto ═══ -->
+        <div class="form-section">
+          <div class="section-header">
+            <div class="section-icon">📱</div>
+            <h2 class="section-title">Información de Contacto</h2>
+          </div>
+          <div class="form-grid">
+            <!-- Teléfono -->
+            <div class="form-group" id="group-telefono">
+              <label for="telefono">Teléfono Celular <span class="required">*</span></label>
+              <input type="tel" id="telefono" name="telefono" class="form-input" placeholder="Ej: 0991234567"
+                maxlength="10" inputmode="tel" required>
+              <span class="error-message" id="error-telefono"></span>
+            </div>
+            <!-- Correo -->
+            <div class="form-group" id="group-correo">
+              <label for="correo">Correo Electrónico <span class="required">*</span></label>
+              <input type="email" id="correo" name="correo" class="form-input" placeholder="Ej: maria@correo.com"
+                autocomplete="email" required>
+              <span class="error-message" id="error-correo"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ Section 3: Nacimiento ═══ -->
+        <div class="form-section">
+          <div class="section-header">
+            <div class="section-icon">🎂</div>
+            <h2 class="section-title">Datos de Nacimiento</h2>
+          </div>
+          <div class="form-grid">
+            <!-- Fecha de Nacimiento -->
+            <div class="form-group" id="group-fechaNacimiento">
+              <label for="fechaNacimiento">Fecha de Nacimiento <span class="required">*</span></label>
+              <input type="date" id="fechaNacimiento" name="fechaNacimiento" class="form-input" required>
+              <span class="error-message" id="error-fechaNacimiento"></span>
+            </div>
+            <!-- Lugar de Nacimiento -->
+            <div class="form-group" id="group-lugarNacimiento">
+              <label for="lugarNacimiento">Lugar de Nacimiento <span class="required">*</span></label>
+              <input type="text" id="lugarNacimiento" name="lugarNacimiento" class="form-input"
+                placeholder="Ej: Guayaquil, Ecuador" required>
+              <span class="error-message" id="error-lugarNacimiento"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ Section 4: Domicilio ═══ -->
+        <div class="form-section">
+          <div class="section-header">
+            <div class="section-icon">🏠</div>
+            <h2 class="section-title">Domicilio</h2>
+          </div>
+          <div class="form-grid">
+            <!-- Dirección -->
+            <div class="form-group full-width" id="group-domicilio">
+              <label for="domicilio">Dirección <span class="required">*</span></label>
+              <input type="text" id="domicilio" name="domicilio" class="form-input"
+                placeholder="Ej: Av. 10 de Agosto N24-122 y Colón" required>
+              <span class="error-message" id="error-domicilio"></span>
+            </div>
+            <!-- Referencia -->
+            <div class="form-group full-width" id="group-referencia">
+              <label for="referencia">Referencia de Domicilio</label>
+              <input type="text" id="referencia" name="referencia" class="form-input"
+                placeholder="Ej: Junto al parque central, edificio azul">
+            </div>
+            <!-- Provincia -->
+            <div class="form-group" id="group-provincia">
+              <label for="provincia">Provincia <span class="required">*</span></label>
+              <div class="select-wrapper">
+                <select id="provincia" name="provincia" class="form-select" required>
+                  <option value="">Seleccione una provincia</option>
+                </select>
+              </div>
+              <span class="error-message" id="error-provincia"></span>
+            </div>
+            <!-- Cantón -->
+            <div class="form-group" id="group-canton">
+              <label for="canton">Cantón <span class="required">*</span></label>
+              <div class="select-wrapper">
+                <select id="canton" name="canton" class="form-select" required disabled>
+                  <option value="">Primero seleccione una provincia</option>
+                </select>
+              </div>
+              <span class="error-message" id="error-canton"></span>
+            </div>
+            <!-- Parroquia -->
+            <div class="form-group" id="group-parroquia">
+              <label for="parroquia">Parroquia <span class="required">*</span></label>
+              <div class="select-wrapper">
+                <select id="parroquia" name="parroquia" class="form-select" required disabled>
+                  <option value="">Primero seleccione un cantón</option>
+                </select>
+              </div>
+              <span class="error-message" id="error-parroquia"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ Submit ═══ -->
+        <div class="submit-section">
+          <button type="submit" class="btn-submit" id="btnSubmit">
+            <span>Enviar Inscripción</span>
+            <span class="btn-icon">→</span>
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- ── Footer ── -->
+    <footer class="form-footer">
+      <p>© 2026 CCEA — Centro Cultural Ecuatoriano Alemán · Ecuador</p>
+    </footer>
+
+  </div>
+
+  <!-- ── Success Modal ── -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-content">
+      <div class="modal-icon">✅</div>
+      <h2>¡Inscripción Enviada!</h2>
+      <p>Hemos recibido tu ficha de inscripción exitosamente. Nos pondremos en contacto contigo pronto.</p>
+      <div class="modal-summary" id="modalSummary">
+        <!-- Filled by JS -->
+      </div>
+      <button class="btn-close-modal" id="btnCloseModal">Aceptar</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/ecuador-data.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
