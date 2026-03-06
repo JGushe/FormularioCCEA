@@ -19,6 +19,26 @@
 
     <!-- ── Header ── -->
     <header class="form-header">
+      <!-- Theme Toggle Button -->
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+        <span class="theme-toggle-icon">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </span>
+      </button>
+      
       <div class="logo-container">
         <img src="assets/logo.png" alt="CCEA - Centro Cultural Ecuatoriano Alemán" class="logo-img">
       </div>
@@ -237,6 +257,68 @@
                 </select>
               </div>
               <span class="error-message" id="error-horario"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ Section 6: Datos de Facturación ═══ -->
+        <div class="form-section">
+          <div class="section-header">
+            <div class="section-icon">🧾</div>
+            <h2 class="section-title">Datos de Facturación</h2>
+          </div>
+          
+          <!-- Nota importante -->
+          <div class="billing-note">
+            <strong>Nota:</strong> Una vez enviado y registrado este formulario, no se podrá realizar cambios a los datos de FACTURACIÓN ELECTRÓNICA.
+          </div>
+
+          <div class="form-grid">
+            <!-- Cédula o RUC -->
+            <div class="form-group" id="group-cedulaRuc">
+              <label for="cedulaRuc">Cédula de Identidad o RUC <span class="required">*</span></label>
+              <input type="text" id="cedulaRuc" name="cedulaRuc" class="form-input" 
+                placeholder="Ej: 0102030405 o 0102030405001" maxlength="13" inputmode="numeric" required>
+              <span class="error-message" id="error-cedulaRuc"></span>
+            </div>
+            
+            <!-- Nombres y Apellidos para Factura -->
+            <div class="form-group" id="group-nombresFactura">
+              <label for="nombresFactura">Nombres y Apellidos <span class="required">*</span></label>
+              <input type="text" id="nombresFactura" name="nombresFactura" class="form-input" 
+                placeholder="Ej: María González López" required>
+              <span class="error-message" id="error-nombresFactura"></span>
+            </div>
+            
+            <!-- Razón Social (opcional) -->
+            <div class="form-group full-width" id="group-razonSocial">
+              <label for="razonSocial">Razón Social (Si es empresa)</label>
+              <input type="text" id="razonSocial" name="razonSocial" class="form-input" 
+                placeholder="Ej: Centro Cultural Ecuatoriano Alemán S.A.">
+            </div>
+            
+            <!-- Dirección para Factura -->
+            <div class="form-group full-width" id="group-direccionFactura">
+              <label for="direccionFactura">Dirección Factura <span class="required">*</span></label>
+              <textarea id="direccionFactura" name="direccionFactura" class="form-input form-textarea" 
+                placeholder="Ej: Av. 10 de Agosto N24-122 y Colón, Edificio Centro" rows="3" required></textarea>
+              <span class="error-message" id="error-direccionFactura"></span>
+            </div>
+            
+            <!-- Teléfono Factura -->
+            <div class="form-group" id="group-telefonoFactura">
+              <label for="telefonoFactura">Teléfono <span class="required">*</span></label>
+              <input type="tel" id="telefonoFactura" name="telefonoFactura" class="form-input" 
+                placeholder="Ej: 0991234567" maxlength="10" inputmode="tel" required>
+              <span class="error-message" id="error-telefonoFactura"></span>
+            </div>
+            
+            <!-- Correo Factura -->
+            <div class="form-group" id="group-correoFactura">
+              <label for="correoFactura">Correo Electrónico <span class="required">*</span></label>
+              <input type="email" id="correoFactura" name="correoFactura" class="form-input" 
+                placeholder="Ej: facturacion@correo.com" autocomplete="email" required>
+              <span class="error-message" id="error-correoFactura"></span>
             </div>
           </div>
         </div>
