@@ -3,7 +3,39 @@
  * Sets up event listeners and animations
  */
 
+// ── Theme Toggle Functionality ──
+function initThemeToggle() {
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    
+    // Check for saved theme preference or default to dark mode
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    
+    // Apply saved theme
+    if (savedTheme === 'light') {
+        body.classList.add('light-mode');
+    }
+    
+    // Toggle theme on button click
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+        
+        // Save preference
+        const currentTheme = body.classList.contains('light-mode') ? 'light' : 'dark';
+        localStorage.setItem('theme', currentTheme);
+        
+        // Add a subtle animation
+        themeToggle.style.transform = 'rotate(180deg)';
+        setTimeout(() => {
+            themeToggle.style.transform = '';
+        }, 300);
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize theme toggle
+    initThemeToggle();
+    
     // Initialize cascading selects (geographic)
     initCascadingSelects();
 
